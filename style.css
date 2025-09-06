@@ -1,0 +1,151 @@
+/* Futuristic Metro Companion UI - Improved */
+
+:root {
+    --bg-dark: #121212;
+    --bg-medium: #1f1f1f;
+    --bg-light: #2c2c2c;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent-blue: #00bfff; /* Deep Sky Blue */
+    --accent-green: #39ff14; /* Neon Green */
+    --gradient-start: #00c6ff;
+    --gradient-end: #0072ff;
+    --shadow-color: rgba(0, 198, 255, 0.4);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-medium));
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent scrollbar from background effects */
+    position: relative;
+}
+
+/* Background grid/pattern for futuristic effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle, var(--bg-light) 1px, transparent 1px) 0 0 / 20px 20px,
+        radial-gradient(circle, var(--bg-light) 1px, transparent 1px) 10px 10px / 20px 20px;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    width: 450px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.app-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--accent-blue);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--accent-blue);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+select, input[type="time"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-light);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+select:focus, input[type="time"]:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.6);
+}
+
+select option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    color: var(--bg-dark);
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    border: 1px dashed var(--accent-green);
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.result-box h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--accent-green);
+}
+
+.result-box p strong {
+    color: var(--accent-blue);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

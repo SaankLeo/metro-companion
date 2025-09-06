@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metro Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1 class="app-title">🚇 Metro Companion</h1>
+
+    <div class="input-group">
+      <label for="source">From</label>
+      <select id="source"></select>
+    </div>
+
+    <div class="input-group">
+      <label for="destination">To</label>
+      <select id="destination"></select>
+    </div>
+
+ 
+
+    <div class="input-group">
+      <label for="futureTime">Travel Time</label>
+      <input type="time" id="futureTime">
+    </div>
+
+    <button id="findBtn">Find Route</button>
+
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
